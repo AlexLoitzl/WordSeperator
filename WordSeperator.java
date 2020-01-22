@@ -45,10 +45,10 @@ public class WordSeperator {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		if(args.length != 0) {
+		if(args.length != 1) {
 			System.out.println("Usage: WordSeparator <Dictionary>");
 		}else {
-			try (Scanner s = new Scanner(System.in); BufferedReader reader = new BufferedReader(new FileReader("german-common-nouns.txt", StandardCharsets.UTF_8))){
+			try (Scanner s = new Scanner(System.in); BufferedReader reader = new BufferedReader(new FileReader(args[0], StandardCharsets.UTF_8))){
 				Trie dict = new Trie(reader);
 				reader.close();
 				String input = "";
