@@ -23,3 +23,5 @@ very least character. Then we shift our beginning by one.. In worst case this sh
 steps through out tree. In every step we have to find the right node, so we have to look up our char in our HashMap which ahs a maximum of 30 key value pairs.
 Technically a lookup hast worst case O(logn) time, but since we only have 30 pairs it does'nt matter if it's constanct or not. So we'd have about
 2,5*(n^2-n) which is in O(n^2)
+
+## Corner Cases and potential bugs
