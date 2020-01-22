@@ -36,8 +36,8 @@ There is a potential issue, depending on the dictioanry. If we, for example look
 Although words sharing prefixes is no issue, and even helps us argue for using a trie data structure. No word should be the prefix of another if it's a compound word. For Example "Schach" and "Schacht". We would identify "Schach" as the only subword. This might be fixable. If only one subword is identified, it should be the word itself, although this does not make alot of sense if our dictionary is incomplete. "Dampfschiff" only returns "Dampf" with the dictionary used. Also if there is a spelling mistake, eg. "Anwältskanzlei", we could at least identify "kanzlei" 
 
 * #### Issues that are not being handled
-Those issues are not being handled on purpose. They shoud be handled by the client using a WordSeperator. The CLI, mostly implemented for testing purposes does not handle those either and rely on proper usage.
+Those issues are not being handled on purpose. They shoud be handled by the client using a WordSeperator. The CLI, mostly         implemented for testing purposes does not handle those either and rely on proper usage.
 Those are:
-* German umlauts could be entered as eg. 'ä' or 'ae', it has to be the same as the dictionary
-* The CLI expects a utf8 file, it can be problematic with umlauts. It can potentially raise issues if umlauts are encoded differently in the tree.
-* There should be a check for wordlength
+  *  German umlauts could be entered as eg. 'ä' or 'ae', it has to be the same as the dictionary
+  *  The CLI expects a utf8 file, it can be problematic with umlauts. It can potentially raise issues if umlauts are encoded    differently in the tree.
+  *  There should be a check for wordlength
