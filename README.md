@@ -13,8 +13,8 @@ This implies that the path from the root to this word forms a word which is incl
 So instead of saving each word as a string, which we'll simplify to the amount of characters it contains, and using a HashIndex to acces the words,
 We have a Tree structure where each node stores a boolean, a character and potentially a HashMap with up to 29 keyvalue pairs.
 We use a HashMap here to not waste space with an array which could contain only nullpointers.
-The advantage is that if words share same prefixes we don't need to store those characters several times. It seems like with growing dictionary size,
-this data structure pays off.
+In this case we need to store ~16000 Nodes within our Tree, and we only have 33.000 characters in our dictionary.
+The advantage is that if words share same prefixes we don't need to store those characters several times. It seems like with growing dictionary size, this data structure would pay off, in this case it might be too excessive.
 
 #### Time Complexity
 If looking for a substring in our word of length n we start at the very first letter working our way up until we run into a node which is not a valid word and doesn't
