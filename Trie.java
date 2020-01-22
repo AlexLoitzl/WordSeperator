@@ -51,7 +51,7 @@ public class Trie {
 		}
 	}
 	/**
-	 * Traverses through the tree character by character until the end of word. Creates HashMap entries on the way
+	 * Runs through the tree character by character until the end of word. Creates HashMap entries on the way
 	 * @param word
 	 */
 	public void insert(String word) {
@@ -63,7 +63,7 @@ public class Trie {
 		pointer.contained = true;
 	}
 	/**
-	 * Traverses through the Tree to find word
+	 * Runs through the Tree to find word
 	 * @param word
 	 * @return true if word was found, false otherwise
 	 */
@@ -80,7 +80,7 @@ public class Trie {
 		return pointer.contained;
 	}
 	/**
-	 * Traverses through Tree to find a potential subword contained in word
+	 * Runs through Tree to find a potential subword contained in word
 	 * @param word
 	 * @return index of last char of subword, -1 if not found
 	 */
