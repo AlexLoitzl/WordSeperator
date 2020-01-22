@@ -20,8 +20,17 @@ this data structure pays off.
 If looking for a substring in our word of length n we start at the very first letter working our way up until we run into a node which is not a valid word and doesn't
 allow us to go any further, or we find the word in our tree. so in worst case we have a path of length n-1 if we don't find any valid word but have to go the
 very least character. Then we shift our beginning by one.. In worst case this should be about (n-1) + (n-2) + ... + 1. So we take ((n-1)(n))/2 
-steps through out tree. In every step we have to find the right node, so we have to look up our char in our HashMap which ahs a maximum of 30 key value pairs.
+steps through out tree. In every step we have to find the right node, so we have to look up our char in our HashMap which has a maximum of 30 key value pairs.
 Technically a lookup hast worst case O(logn) time, but since we only have 30 pairs it does'nt matter if it's constanct or not. So we'd have about
 2,5*(n^2-n) which is in O(n^2)
 
 ## Corner Cases and potential bugs
+
+#### * Compound Words
+If our dictionary contains compound words and one of the subwords, it will identify the subword and extract it leading to never being able to find the compund word itself.
+
+#### * Fake Compound Words
+There is a potential issue, depending on the dictioanry. If we, for example look at the word "hinein" we have two valid german words "hin" and "ein". Even though this might be a proper compound word, I don't think so, it does not make sense to split this apart. It seems like, especially in the context of search engines, this is best aplicable to nouns.
+
+#### * Non Compound words containing another word
+Although words sharing prefixes is no issue, and even helps us argue for using a trie data structure. No word should be the prefix of another if it's a compound word. For Example "Schach" and "Schacht". We would identify "Schach" as the only subword. This might be fixable. If only one subword is identified, it should be the word itself, although this does not make alot of sense if our dictionary is incomplete. "Dampfschiff" only returns "Dampf" with the dictionary used. Also if there is a spelling mistake, eg. "Anwältskanzlei", we could at least identify "kanzlei" 
