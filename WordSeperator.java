@@ -19,7 +19,7 @@ import java.util.Scanner;
 public class WordSeperator {
 	/**
 	 * Returns all subwords of word as a String Array.
-	 * Traverses through the tree, if a subword was found, tries the rest, if not increases starting char.
+	 * Runs through the tree, if a subword was found, tries the rest, if not increases starting char.
 	 * 
 	 * @param word
 	 * @param trie
