@@ -32,5 +32,5 @@ If our dictionary contains compound words and one of the subwords, it will ident
 #### * Fake Compound Words
 There is a potential issue, depending on the dictioanry. If we, for example look at the word "hinein" we have two valid german words "hin" and "ein". Even though this might be a proper compound word, I don't think so, it does not make sense to split this apart. It seems like, especially in the context of search engines, this is best aplicable to nouns.
 
-#### * Non Compound words containing another word
+* #### Non Compound words containing another word
 Although words sharing prefixes is no issue, and even helps us argue for using a trie data structure. No word should be the prefix of another if it's a compound word. For Example "Schach" and "Schacht". We would identify "Schach" as the only subword. This might be fixable. If only one subword is identified, it should be the word itself, although this does not make alot of sense if our dictionary is incomplete. "Dampfschiff" only returns "Dampf" with the dictionary used. Also if there is a spelling mistake, eg. "Anwältskanzlei", we could at least identify "kanzlei" 
