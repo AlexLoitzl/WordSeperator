@@ -16,7 +16,7 @@ We use a HashMap here to not waste space with an array which could contain only 
 The advantage is that if words share same prefixes we don't need to store those characters several times. It seems like with growing dictionary size,
 this data structure pays off.
 
-### Time Complexity
+#### Time Complexity
 If looking for a substring in our word of length n we start at the very first letter working our way up until we run into a node which is not a valid word and doesn't
 allow us to go any further, or we find the word in our tree. so in worst case we have a path of length n-1 if we don't find any valid word but have to go the
 very least character. Then we shift our beginning by one.. In worst case this should be about (n-1) + (n-2) + ... + 1. So we take ((n-1)(n))/2 
